@@ -26,14 +26,19 @@ export default function ListContainer() {
         const { nombre, imagen, artista, _id: id } = fonograma;
         return (
             <a
-              href={`https://mvp-falso-idolo-api.herokuapp.com/api/v1/fonogramas/${id}`}
-            >
-          <div key={id} className="card">
-              <img src={imagen} alt={nombre}></img>
-              <h2>{nombre}</h2>
-              <h3>{artista}</h3>
-          </div>
-            </a>
+                className="card-anchor"
+            href={`https://mvp-falso-idolo-api.herokuapp.com/api/v1/fonogramas/${id}`}
+          >
+            <div key={id} className="card">
+              <div className="img-container">
+                <img className="card-img"src={imagen} alt={nombre}></img>
+              </div>
+              <div className="card-text-container">
+                <h3 className="card-name-text">{nombre}</h3>
+                <h2 className="card-artist-text">{artista}</h2>
+              </div>
+            </div>
+          </a>
         );
       })}
     </div>
