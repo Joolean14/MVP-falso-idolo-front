@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function DetalleCancion() {
+  const [fonograma, setFonograma] = useState({});
+
   const idFonograma = localStorage.getItem("id");
 
   const getFonograma = async (id) => {
@@ -9,6 +11,8 @@ export default function DetalleCancion() {
       const { data } = await axios.get(
         `https://mvp-falso-idolo-api.herokuapp.com/api/v1/fonogramas/${id}`
       );
+      console.log(data);
+      setFonograma(data.fono);
       return <p>jujjuju</p>;
     } catch (error) {
       console.log(error);
@@ -16,44 +20,30 @@ export default function DetalleCancion() {
 
     //  return getFonograma(idFonograma);
   };
+
+  useEffect(() => {
+    getFonograma(idFonograma);
+  }, []);
+
+  const { artista, album, imagen, nombre, categoria } = fonograma;
+
   return (
     <div className="detail-container">
-      {/* {getFonograma(idFonograma)} */}
       <div>
         <p>
-          Artista <span className="detail-data">Lorem</span>
+          Nombre <span className="detail-data">{nombre}</span>
         </p>
         <p>
-          Album <span className="detail-data">Lorem</span>
+          Artista <span className="detail-data">{artista}</span>
         </p>
         <p>
-          Sayco <span className="detail-data">Lorem</span>
+          Album <span className="detail-data">{album}</span>
         </p>
         <p>
-          Acinpro <span className="detail-data">Lorem</span>
-        </p>
-
-        <p>
-          Categoria <span className="badge">Lorem</span>
+          Categoria <span className="badge">{categoria}</span>
         </p>
       </div>
-      <img className="detail-image" src="https://picsum.photos/400?random=93"></img>
-      {/* <p>{localStorage.getItem("id")}</p> */}
-      {/* <p>{artista}</p>
-          <p>{album}</p>
-          <p>{nombre}</p>
-          <p>{categoria}</p>
-          <p>{sayco}</p>
-          <p>{acinpro}</p>
-          <img src={imagen}></img>             */}
+      <img className="detail-image" src={imagen}></img>
     </div>
   );
-
-  //   const assignFonograma = async () => {
-  //     fonograma = await getFonograma(idFonograma);
-  //   };
-  //   assignFonograma();
-  //   const { artista, album, nombre, categoria, sayco, acinpro, imagen } =
-  //     fonograma.fono;
-  //   console.log("Soy artista", artista);
 }
