@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/mvp-falso-idolo-front/static/css/main.ef0abd93.chunk.css",
-    "main.js": "/mvp-falso-idolo-front/static/js/main.21a4a4d0.chunk.js",
-    "main.js.map": "/mvp-falso-idolo-front/static/js/main.21a4a4d0.chunk.js.map",
-    "runtime-main.js": "/mvp-falso-idolo-front/static/js/runtime-main.2169a20d.js",
-    "runtime-main.js.map": "/mvp-falso-idolo-front/static/js/runtime-main.2169a20d.js.map",
-    "static/js/2.0be2def0.chunk.js": "/mvp-falso-idolo-front/static/js/2.0be2def0.chunk.js",
-    "static/js/2.0be2def0.chunk.js.map": "/mvp-falso-idolo-front/static/js/2.0be2def0.chunk.js.map",
-    "static/js/3.f923a975.chunk.js": "/mvp-falso-idolo-front/static/js/3.f923a975.chunk.js",
-    "static/js/3.f923a975.chunk.js.map": "/mvp-falso-idolo-front/static/js/3.f923a975.chunk.js.map",
+    "main.css": "/mvp-falso-idolo-front/static/css/main.cb74d668.chunk.css",
+    "main.js": "/mvp-falso-idolo-front/static/js/main.f00ee966.chunk.js",
+    "main.js.map": "/mvp-falso-idolo-front/static/js/main.f00ee966.chunk.js.map",
+    "runtime-main.js": "/mvp-falso-idolo-front/static/js/runtime-main.f0b2c27c.js",
+    "runtime-main.js.map": "/mvp-falso-idolo-front/static/js/runtime-main.f0b2c27c.js.map",
+    "static/js/2.aca6b566.chunk.js": "/mvp-falso-idolo-front/static/js/2.aca6b566.chunk.js",
+    "static/js/2.aca6b566.chunk.js.map": "/mvp-falso-idolo-front/static/js/2.aca6b566.chunk.js.map",
+    "static/js/3.615d0dbe.chunk.js": "/mvp-falso-idolo-front/static/js/3.615d0dbe.chunk.js",
+    "static/js/3.615d0dbe.chunk.js.map": "/mvp-falso-idolo-front/static/js/3.615d0dbe.chunk.js.map",
     "index.html": "/mvp-falso-idolo-front/index.html",
-    "static/css/main.ef0abd93.chunk.css.map": "/mvp-falso-idolo-front/static/css/main.ef0abd93.chunk.css.map",
-    "static/js/2.0be2def0.chunk.js.LICENSE.txt": "/mvp-falso-idolo-front/static/js/2.0be2def0.chunk.js.LICENSE.txt"
+    "static/css/main.cb74d668.chunk.css.map": "/mvp-falso-idolo-front/static/css/main.cb74d668.chunk.css.map",
+    "static/js/2.aca6b566.chunk.js.LICENSE.txt": "/mvp-falso-idolo-front/static/js/2.aca6b566.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.2169a20d.js",
-    "static/js/2.0be2def0.chunk.js",
-    "static/css/main.ef0abd93.chunk.css",
-    "static/js/main.21a4a4d0.chunk.js"
+    "static/js/runtime-main.f0b2c27c.js",
+    "static/js/2.aca6b566.chunk.js",
+    "static/css/main.cb74d668.chunk.css",
+    "static/js/main.f00ee966.chunk.js"
   ]
 }
