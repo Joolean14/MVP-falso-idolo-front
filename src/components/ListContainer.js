@@ -27,7 +27,7 @@ export default function ListContainer() {
         return (
             <a
                 className="card-anchor"
-            href={`https://mvp-falso-idolo-api.herokuapp.com/api/v1/fonogramas/${id}`}
+            href="/detail"
           >
             <div key={id} className="card">
               <div className="img-container">
