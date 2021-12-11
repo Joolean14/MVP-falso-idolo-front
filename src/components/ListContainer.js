@@ -25,33 +25,33 @@ export default function ListContainer() {
     localStorage.setItem("id", currentTarget.id);
   };
 
-  const artistsArray = [];
+  // const artistsArray = [];
 
-  for (let x of fonogramas) {
-    if (!artistsArray.includes(x.artista)) {
-      artistsArray.push(x.artista.toUpperCase());
-    }
+  // for (let x of fonogramas) {
+  //   if (!artistsArray.includes(x.artista)) {
+  //     artistsArray.push(x.artista.toUpperCase());
+  //   }
 
-  }
+  // }
 
-  const filterArtist = async (artista) => {
-    try {
-      const { data } = await axios.get(
-        `https://mvp-falso-idolo-api.herokuapp.com/api/v1/fonogramas/artistas/${artista}`
-      );
-      // setFonogramas(data.fonos);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const filterArtist = async (artista) => {
+  //   try {
+  //     const { data } = await axios.get(
+  //       `https://mvp-falso-idolo-api.herokuapp.com/api/v1/fonogramas/artistas/${artista}`
+  //     );
+  //     // setFonogramas(data.fonos);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   return (
     <div>
       <div className="filter-container">
-        {artistsArray.map((artista) => {
+        {/* {artistsArray.map((artista) => {
           return <button onClick={ filterArtist }key={artista}>{artista}</button>;
         })}
-        <button>All</button>
+        <button>All</button> */}
       </div>
       <div className="list-container">
         {fonogramas.map((fonograma) => {
