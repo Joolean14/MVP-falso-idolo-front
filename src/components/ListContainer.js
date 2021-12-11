@@ -20,25 +20,29 @@ export default function ListContainer() {
     getFonogramas();
   }, []);
 
+  const goDetail = ({ currentTarget }) => {
+    console.log(currentTarget.id);
+    localStorage.setItem("id", currentTarget.id);
+  };
+
   return (
     <div className="list-container">
       {fonogramas.map((fonograma) => {
         const { nombre, imagen, artista, _id: id } = fonograma;
         return (
-            <a
-                className="card-anchor"
-            href="/detail"
-          >
-            <div key={id} className="card">
-              <div className="img-container">
-                <img className="card-img"src={imagen} alt={nombre}></img>
+          <div key={id} id={id} onClick={goDetail}>
+            <a className="card-anchor" href="/detail" target="_blank">
+              <div className="card">
+                <div className="img-container">
+                  <img className="card-img" src={imagen} alt={nombre}></img>
+                </div>
+                <div className="card-text-container">
+                  <h3 className="card-name-text">{nombre}</h3>
+                  <h2 className="card-artist-text">{artista}</h2>
+                </div>
               </div>
-              <div className="card-text-container">
-                <h3 className="card-name-text">{nombre}</h3>
-                <h2 className="card-artist-text">{artista}</h2>
-              </div>
-            </div>
-          </a>
+            </a>
+          </div>
         );
       })}
     </div>

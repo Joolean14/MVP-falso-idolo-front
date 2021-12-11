@@ -71,3 +71,64 @@ html {
 .card-text-container {
   padding: 10px;
 }
+
+.contact {
+  padding: 3vw;
+  margin: 3vw;
+  width: 80vw;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center ;
+  align-content: center;
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+
+.contact-text-container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.profile-img-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-img {
+  border-radius: 50%;
+  width: 60%;
+}
+
+.detail-container {
+  padding: 3vw;
+  margin: 3vw;
+  width: 80vw;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly ;
+  align-content: center;
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+
+.detail-data {
+  font-style: italic;
+}
+
+.detail-image {
+  border-radius: 5px;
+}
+
+.badge {
+  background-color: blue;
+  display: inline;
+  border-radius: 9px;
+  padding: 7px;
+}
