@@ -12,7 +12,7 @@ function App() {
             <h2>Simón Restrepo</h2>
             <p>Sync Agent Falso Ídolo</p>
           </div>
-          <p>(+57)312-741-4994</p>
+          <p>(+57) 312-741-4994</p>
           <p>restrepo.simon@hotmail.com</p>
           <a href="https://www.instagram.com/rstrpsmn/">
             https://www.instagram.com/rstrpsmn/

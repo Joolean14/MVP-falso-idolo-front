@@ -9,7 +9,7 @@ export default function DetalleCancion() {
   const getFonograma = async (id) => {
     try {
       const { data } = await axios.get(
-        `https://mvp-falso-idolo-api.herokuapp.com/api/v1/fonogramas/${id}`
+        `https://mvp-falso-idolo-api.herokuapp.com/api/v1/fonogramas/single/${id}`
       );
       console.log(data);
       setFonograma(data.fono);
@@ -42,6 +42,7 @@ export default function DetalleCancion() {
         <p>
           Categoria <span className="badge">{categoria}</span>
         </p>
+      <button><a href="/">Back</a></button>
       </div>
       <img className="detail-image" src={imagen}></img>
     </div>
