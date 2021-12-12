@@ -42,9 +42,11 @@ export default function DetalleCancion() {
         <p>
           Categoria <span className="badge">{categoria}</span>
         </p>
-      <button><a href="/">Back</a></button>
+        <button>
+          <a href="/">Back</a>
+        </button>
       </div>
-      <img className="detail-image" src={imagen}></img>
+      <img className="detail-image" src={imagen} alt={artista}></img>
     </div>
   );
 }
