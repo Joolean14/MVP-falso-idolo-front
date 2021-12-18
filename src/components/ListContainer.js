@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import Card from "./Card";
 
 export default function ListContainer() {
   const [fonogramas, setFonogramas] = useState([]);
+ 
 
   const getFonogramas = async () => {
     try {
@@ -26,51 +27,14 @@ export default function ListContainer() {
     localStorage.setItem("id", currentTarget.id);
   };
 
-  // const artistsArray = [];
-
-  // for (let x of fonogramas) {
-  //   if (!artistsArray.includes(x.artista)) {
-  //     artistsArray.push(x.artista.toUpperCase());
-  //   }
-
-  // }
-
-  // const filterArtist = async (artista) => {
-  //   try {
-  //     const { data } = await axios.get(
-  //       `https://mvp-falso-idolo-api.herokuapp.com/api/v1/fonogramas/artistas/${artista}`
-  //     );
-  //     // setFonogramas(data.fonos);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   return (
     <div>
-      <div className="filter-container">
-        {/* {artistsArray.map((artista) => {
-          return <button onClick={ filterArtist }key={artista}>{artista}</button>;
-        })}
-        <button>All</button> */}
-      </div>
+      <div className="filter-container"></div>
       <div className="list-container">
         {fonogramas.map((fonograma) => {
           const { nombre, imagen, artista, _id: id } = fonograma;
           return (
-            <div key={id} id={id} onClick={goDetail}>
-              <Link className="card-anchor" to="/detail">
-                <div className="card">
-                  <div className="img-container">
-                    <img className="card-img" src={imagen} alt={nombre}></img>
-                  </div>
-                  <div className="card-text-container">
-                    <h3 className="card-name-text">{nombre}</h3>
-                    <h2 className="card-artist-text">{artista}</h2>
-                  </div>
-                </div>
-              </Link>
-            </div>
+            <Card key={id} {...fonograma} goDetail={goDetail} />
           );
         })}
       </div>
