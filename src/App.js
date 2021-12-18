@@ -2,6 +2,7 @@ import "./normalize.css";
 import "./App.css";
 import ListContainer from "./components/ListContainer";
 import simon from "./simon-prof.jpeg"
+import FAQ from "./components/FAQ";
 
 function App() {
   return (
@@ -29,8 +30,11 @@ function App() {
             alt="Simón Restrepo"
           ></img>
         </div>
+
       </div>
+      <FAQ />
       <ListContainer />
+
     </main>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function DetalleCancion() {
   const [fonograma, setFonograma] = useState({});
@@ -13,7 +14,7 @@ export default function DetalleCancion() {
       );
       console.log(data);
       setFonograma(data.fono);
-      return <p>jujjuju</p>;
+      return;
     } catch (error) {
       console.log(error);
     }
@@ -25,7 +26,8 @@ export default function DetalleCancion() {
     getFonograma(idFonograma);
   }, []);
 
-  const { artista, album, imagen, nombre, categoria } = fonograma;
+  const { artista, album, imagen, nombre, categoria, moods } = fonograma;
+
 
   return (
     <div className="detail-container">
@@ -40,10 +42,13 @@ export default function DetalleCancion() {
           Album <span className="detail-data">{album}</span>
         </p>
         <p>
-          Categoria <span className="badge">{categoria}</span>
+          Categoria <span className="detail-data">{categoria}</span>
+        </p>
+        <p>
+          Categoria <span className={`badge ${moods}-badge`}>{moods}</span>
         </p>
         <button>
-          <a href="/">Back</a>
+          <Link to="/">Back</Link>
         </button>
       </div>
       <img className="detail-image" src={imagen} alt={artista}></img>

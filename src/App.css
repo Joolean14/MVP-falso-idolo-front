@@ -6,11 +6,11 @@
 html {
   --outline: 1px dotted rgba(255, 0, 0, 0.5);
   --outline: 0px;
-  }
-  
-  * {
+}
+
+* {
   outline: var(--outline);
-  }
+}
 
 .App {
   display: flex;
@@ -27,7 +27,7 @@ html {
 .list-container {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;  
+  flex-wrap: wrap;
   justify-content: center;
   align-content: center;
   gap: 100px;
@@ -48,7 +48,6 @@ html {
   height: 200px;
   position: relative;
   border-radius: 5px;
-
 }
 
 .card-img {
@@ -79,17 +78,15 @@ html {
   height: auto;
   display: flex;
   flex-direction: row;
-  justify-content: center ;
+  justify-content: center;
   align-content: center;
   border-radius: 5px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
 }
 
 .contact-text-container {
   display: flex;
   flex-direction: column;
-
 }
 
 .profile-img-container {
@@ -111,11 +108,10 @@ html {
   height: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly ;
+  justify-content: space-evenly;
   align-content: center;
   border-radius: 5px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
 }
 
 .detail-data {
@@ -125,16 +121,96 @@ html {
 .detail-image {
   border-radius: 5px;
 }
-
+/* ====================================BADGE============================================ */
 .badge {
-  background-color: blue;
   display: inline;
   border-radius: 9px;
   padding: 7px;
+}
+
+.happy-badge {
+  background-color: yellow;
+}
+
+.sad-badge {
+  background-color: blue;
+}
+
+.romantic-badge {
+  background-color: pink;
+}
+
+.dramatic-badge {
+  background-color: purple;
+}
+
+.angry-badge {
+  background-color: red;
+}
+
+.calm-badge {
+  background-color: green;
+}
+
+.inspirational-badge {
+  background-color: moccasin;
+}
+
+.bright-badge {
+  background-color: papayawhip;
+}
+
+.dark-badge {
+  background-color: gray;
+}
+
+.funky-badge {
+  background-color: peru;
 }
 
 .filter-container {
   display: flex;
   flex-direction: row;
   padding: 3vw;
+}
+
+
+/* =================================FAQ======================================== */
+
+.questions-container {
+  padding: 3vw;
+  margin: 3vw;
+  width: 80vw;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: grid;
+  grid-template-columns: 20% 1fr;
+}
+
+.question {
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin: 2%;
+  padding: 2%;
+}
+
+.question header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+}
+
+.minus-plus-btn {
+  border-radius: 50%;
+  border-color: transparent;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #eae6eb;
+  color: tomato;
 }
