@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function ListContainer() {
   const [fonogramas, setFonogramas] = useState([]);
@@ -58,7 +59,7 @@ export default function ListContainer() {
           const { nombre, imagen, artista, _id: id } = fonograma;
           return (
             <div key={id} id={id} onClick={goDetail}>
-              <a className="card-anchor" href="/detail" target="_blank">
+              <Link className="card-anchor" to="/detail">
                 <div className="card">
                   <div className="img-container">
                     <img className="card-img" src={imagen} alt={nombre}></img>
@@ -68,7 +69,7 @@ export default function ListContainer() {
                     <h2 className="card-artist-text">{artista}</h2>
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
           );
         })}

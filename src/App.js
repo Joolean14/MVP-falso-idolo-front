@@ -1,6 +1,7 @@
 import "./normalize.css";
 import "./App.css";
 import ListContainer from "./components/ListContainer";
+import simon from "./simon-prof.jpeg"
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
         <div className="profile-img-container">
           <img
             className="profile-img"
-            src="https://picsum.photos/400?random=93"
+            src={simon}
             alt="Simón Restrepo"
           ></img>
         </div>
