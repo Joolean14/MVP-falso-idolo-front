@@ -4,7 +4,6 @@ import Card from "./Card";
 
 export default function ListContainer() {
   const [fonogramas, setFonogramas] = useState([]);
- 
 
   const getFonogramas = async () => {
     try {
@@ -28,16 +27,14 @@ export default function ListContainer() {
   };
 
   return (
-    <div>
+    <>
       <div className="filter-container"></div>
       <div className="list-container">
         {fonogramas.map((fonograma) => {
-          const { nombre, imagen, artista, _id: id } = fonograma;
-          return (
-            <Card key={id} {...fonograma} goDetail={goDetail} />
-          );
+          const { _id: id } = fonograma;
+          return <Card key={id} {...fonograma} goDetail={goDetail} />;
         })}
       </div>
-    </div>
+    </>
   );
 }
