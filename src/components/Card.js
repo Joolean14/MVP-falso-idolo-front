@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { AiFillPauseCircle, AiFillPlayCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
-export default function Card({ id, nombre, artista, imagen, goDetail }) {
+export default function Card({ _id: id, nombre, artista, imagen, goDetail }) {
   const [audioStream, setPlay] = useState(false);
   return (
-    <div className="card" id={id} onClick={goDetail}>
+    <div className="card" id={id}>
       <div className="img-container">
         <img className="card-img" src={imagen} alt={nombre}></img>
       </div>
@@ -32,7 +32,9 @@ export default function Card({ id, nombre, artista, imagen, goDetail }) {
               }}
             />
           )}
-          <Link to="/detail">Ver detalles</Link>
+          <Link to="/detail" target="_blank" onClick={goDetail}>
+            Ver detalles
+          </Link>
           {audioStream && (
             <audio autoPlay>
               <source

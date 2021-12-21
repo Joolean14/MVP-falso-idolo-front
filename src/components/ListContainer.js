@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { FilterBtns } from "./FilterBtns";
 import Card from "./Card";
+import axios from "axios";
 
 export default function ListContainer() {
+  //States.
+  const [isLoading, setIsLoading] = useState(true);
   const [fonogramas, setFonogramas] = useState([]);
 
   const getFonogramas = async () => {
@@ -12,7 +15,9 @@ export default function ListContainer() {
       );
       console.log(data);
       setFonogramas(data.fonos);
+      setIsLoading(false);
     } catch (error) {
+      setIsLoading(false);
       console.log(error);
     }
   };
@@ -21,20 +26,35 @@ export default function ListContainer() {
     getFonogramas();
   }, []);
 
-  const goDetail = ({ currentTarget }) => {
-    console.log(currentTarget.id);
-    localStorage.setItem("id", currentTarget.id);
+  //Event handlers.
+  const goDetail = (e) => {
+    const { target } = e;
+    const cardId = target.parentElement.parentElement.parentElement.id;
+    localStorage.setItem("id", cardId);
   };
+
+  const filterByArtist = (artista) => {
+    const filteredArtists = fonogramas.filter((fonograma) => {
+      return fonograma.artista === artista;
+    });
+    setFonogramas(filteredArtists);
+  };
+
+  if (!isLoading) {
+  }
 
   return (
     <>
-      <div className="filter-container"></div>
+      {!isLoading && (
+        <FilterBtns fonogramas={fonogramas} filterByArtist={filterByArtist} />
+      )}
       <div className="list-container">
         {fonogramas.map((fonograma) => {
           const { _id: id } = fonograma;
           return <Card key={id} {...fonograma} goDetail={goDetail} />;
         })}
       </div>
+      {isLoading && <div className="loading"></div>};
     </>
   );
 }

@@ -8,7 +8,7 @@ export function Contact() {
         <div className="contact-text-container">
           <div>
             <h2>Simón Restrepo</h2>
-            <p className="position">Sync Agent Falso Ídolo</p>
+            <p className="job">Sync Agent Falso Ídolo</p>
           </div>
           <div className="contact-links-container">
             <a href="tel:+573127414994">(+57) 312-741-4994</a>
