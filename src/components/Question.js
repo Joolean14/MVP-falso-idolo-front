@@ -5,12 +5,9 @@ export default function Question({ question, answer }) {
   const [showInfo, setShowInfo] = useState(false);
   return (
     <div className="question">
-      <header>
+      <header onClick={() => setShowInfo(!showInfo)}>
         <h5>{question}</h5>
-        <button
-          className="minus-plus-btn"
-          onClick={() => setShowInfo(!showInfo)}
-        >
+        <button className="minus-plus-btn">
           {showInfo ? <AiOutlineMinus /> : <AiOutlinePlus />}
         </button>
       </header>

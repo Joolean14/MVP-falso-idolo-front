@@ -1,4 +1,4 @@
-/* fonts */
+/* fonts import */
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;400&family=Titillium+Web&display=swap");
 
 /*
@@ -64,8 +64,7 @@ html {
   --secondary-800: #340b36;
   --secondary-900: #1a061b;
 
-  /* grey: Blue gray*/ /*TODO: CUSTOMIZE*/
-  /** From tailwind.*/
+  /* greys*/
   --grey-50: #f8fafc;
   --grey-100: #d6d6d6;
   --grey-200: #adadad;
@@ -95,7 +94,7 @@ html {
 
   --heading-font: "Dosis", sans-serif;
   --body-font: "Titillium Web", sans-serif;
-  --small-text: 0.875rem; /** Changed by JOHN- var name*/
+  --small-text: 0.875rem;
   --extra-small-text: 0.7em; /**small text relative to container.*/
 
   /*
@@ -103,7 +102,7 @@ html {
 *SPACERS
 ===============
 */
-  /**For vertical rhythm. Entre creados por mí y Javier.*/
+  /**For vertical rhythm.*/
   --spacer-2xs: 0.5rem;
   --spacer-xs: 0.75rem;
   --spacer-s: 1rem;
@@ -157,11 +156,7 @@ html {
   --transition: 0.2s ease-in-out all;
 }
 
-/*
-=============== 
-*TEXT STYLES
-===============
-*/
+/** =============================================================BASIC STYLES========================================================= */
 body {
   background-image: linear-gradient(
     to right bottom,
@@ -204,8 +199,12 @@ h5 {
   letter-spacing: var(--letterSpacing);
 }
 
+/*
+=============== 
+*TYPESCALE
+===============
+*/
 /**SCALE: Major 3rd*/
-
 h1 {
   margin-top: 0;
   font-size: 3.052rem;
@@ -232,8 +231,7 @@ small,
   font-size: var(--small-text);
 }
 
-/** All styles below added by JOHN*/
-/* title */
+/* titles */
 .title {
   text-align: center;
 }
@@ -241,7 +239,7 @@ small,
 .title-underline {
   background: var(--primary-500);
   width: 7rem;
-  height: 0.25rem;
+  height: 2px;
   margin: 0 auto;
   margin-top: -1rem;
 }
@@ -420,7 +418,11 @@ ul {
 ========================================================================================================================================
 *FIN DE LA TEMPLATE - ESTILOS PARTICULARES
 ========================================================================================================================================
-
+*/
+/*
+========================================================================================================================================
+*APP.js
+========================================================================================================================================
 */
 .main-container {
   display: flex;
@@ -432,6 +434,12 @@ ul {
 .main-title {
   margin-top: 100px;
 }
+
+/*
+========================================================================================================================================
+*CARD. js - LISTCONTAINER.js
+========================================================================================================================================
+*/
 
 .list-container {
   display: flex;
@@ -500,6 +508,33 @@ ul {
   transition: var(--transition);
 }
 
+/*
+=============== 
+*AUDIO PLAYER BUTTON
+===============
+*/
+.audio-details-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.audio-player {
+  color: var(--primary-500);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.audio-player:hover {
+  transform: scale(1.15);
+}
+
+/*
+========================================================================================================================================
+*CONTACT.js
+========================================================================================================================================
+*/
+
 .contact-section {
   max-width: var(--max-width);
   padding: var(--spacer-2xl);
@@ -530,7 +565,7 @@ ul {
   width: 40px;
 }
 
-.position {
+.job {
   color: var(--primary-300);
 }
 
@@ -567,6 +602,75 @@ ul {
   width: 100%;
 }
 
+/*
+========================================================================================================================================
+*FAQ.js
+========================================================================================================================================
+*/
+.faq-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.questions-container {
+  width: var(--max-width);
+  border-radius: var(--borderRadius);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: grid;
+  grid-template-columns: 20% 1fr;
+}
+
+.question header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  cursor: pointer;
+}
+
+.question {
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin: 2%;
+  padding: 2%;
+}
+
+.question h5::after {
+  content: "";
+  width: 15px;
+  height: 2px;
+  display: block;
+  background-color: var(--secondary-400);
+  margin-bottom: var(--spacer-s);
+  transition: var(--transition);
+}
+
+.question header:hover h5::after {
+  width: 40px;
+}
+
+.minus-plus-btn {
+  border-radius: 50%;
+  border-color: transparent;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #eae6eb;
+  color: tomato;
+}
+
+.answer {
+  text-align: justify;
+}
+
+/*
+========================================================================================================================================
+*DETALLECANCION.js
+========================================================================================================================================
+*/
 .detail-container {
   padding: 3vw;
   margin: 3vw;
@@ -587,7 +691,12 @@ ul {
 .detail-image {
   border-radius: 5px;
 }
-/* ====================================BADGE============================================ */
+
+/*
+=============== 
+*BADGES
+===============
+*/
 .badge {
   display: inline;
   border-radius: 9px;
@@ -634,44 +743,29 @@ ul {
   background-color: peru;
 }
 
+/*
+========================================================================================================================================
+*FILTERBTNS.js
+========================================================================================================================================
+*/
 .filter-container {
+  max-width: var(--max-width);
   display: flex;
-  flex-direction: row;
-  padding: 3vw;
-}
-
-/* =================================FAQ======================================== */
-
-.faq-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.questions-container {
-  width: var(--max-width);
+  flex-wrap: wrap;
+  padding: var(--spacer-l);
+  gap: var(--spacer-baseline);
+  justify-content: space-evenly;
+  background-image: var(--background-color-dark);
   border-radius: var(--borderRadius);
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  display: grid;
-  grid-template-columns: 20% 1fr;
 }
 
-.question header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+.artists-title {
+  color: var(--text-color-light);
 }
 
-.question {
-  border-radius: 5px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  margin: 2%;
-  padding: 2%;
-}
-
-.question h5::after {
+.artists-title::after {
   content: "";
-  width: 15px;
+  width: 25px;
   height: 2px;
   display: block;
   background-color: var(--secondary-400);
@@ -679,42 +773,20 @@ ul {
   transition: var(--transition);
 }
 
-.minus-plus-btn {
-  border-radius: 50%;
-  border-color: transparent;
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  background-color: #eae6eb;
-  color: tomato;
+.filter-container:hover .artists-title::after {
+  width: 40px;
 }
 
-.answer {
-  text-align: justify;
+.filter-artists-btn {
+  width: 150px;
+  height: 60px;
 }
 
-/* =================================AUDIO============================== */
-
-.audio-details-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.audio-player {
-  color: var(--primary-500);
-  font-size: 2rem;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.audio-player:hover {
-  transform: scale(1.15);
-}
-
-/** =============================================================MEDIA QUERIES========================================================= */
+/*
+========================================================================================================================================
+*MEDIA QUERIES
+========================================================================================================================================
+*/
 /*TODO: Media queries can go to Variables.*/
 /*TODO: Media queries - Desktop first*/
 @media only screen and (max-width: 641px) {
