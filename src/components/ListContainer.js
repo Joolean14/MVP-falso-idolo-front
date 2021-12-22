@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FilterBtns } from "./FilterBtns";
 import Card from "./Card";
 import axios from "axios";
@@ -7,6 +7,8 @@ export default function ListContainer() {
   //States.
   const [isLoading, setIsLoading] = useState(true);
   const [fonogramas, setFonogramas] = useState([]);
+  const [artistas, setArtistas] = useState([]);
+  const initialFonogramas = useRef([]);
 
   const getFonogramas = async () => {
     try {
@@ -15,6 +17,11 @@ export default function ListContainer() {
       );
       console.log(data);
       setFonogramas(data.fonos);
+      setArtistas([
+        "Todos",
+        ...new Set(data.fonos.map((item) => item.artista)),
+      ]);
+      initialFonogramas.current = data.fonos;
       setIsLoading(false);
     } catch (error) {
       setIsLoading(false);
@@ -34,7 +41,12 @@ export default function ListContainer() {
   };
 
   const filterByArtist = (artista) => {
-    const filteredArtists = fonogramas.filter((fonograma) => {
+    if (artista === "Todos") {
+      setFonogramas(initialFonogramas.current);
+      return;
+    }
+
+    const filteredArtists = initialFonogramas.current.filter((fonograma) => {
       return fonograma.artista === artista;
     });
     setFonogramas(filteredArtists);
@@ -46,7 +58,7 @@ export default function ListContainer() {
   return (
     <>
       {!isLoading && (
-        <FilterBtns fonogramas={fonogramas} filterByArtist={filterByArtist} />
+        <FilterBtns artistas={artistas} filterByArtist={filterByArtist} />
       )}
       <div className="list-container">
         {fonogramas.map((fonograma) => {
