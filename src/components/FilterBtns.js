@@ -1,15 +1,9 @@
-import { useState, useEffect } from "react";
-
-export const FilterBtns = ({ fonogramas, filterByArtist }) => {
-  const [artists] = useState([
-    "Todos",
-    ...new Set(fonogramas.map((item) => item.artista)),
-  ]);
-
+export const FilterBtns = ({ artistas, filterByArtist }) => {
   return (
     <div className="filter-container">
       <h3 className="artists-title">Artistas</h3>
-      {artists.map((artista, index) => {
+      {artistas.map((artista, index) => {
+
         return (
           <button
             key={index}
