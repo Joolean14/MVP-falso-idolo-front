@@ -27,7 +27,6 @@ export default function ListContainer() {
       ]);
       initialFonogramas.current = data.fonos;
 
-
       setIsLoading(false);
     } catch (error) {
       setIsLoading(false);
@@ -39,19 +38,15 @@ export default function ListContainer() {
     getFonogramas();
   }, []);
 
-
   useEffect(() => {
     previousTrackID.current = currentTrackID;
   }, [currentTrackID]);
-
-
 
   //Event handlers.
   const goDetail = (e) => {
     const { target } = e;
     const cardId = target.parentElement.parentElement.parentElement.id;
     localStorage.setItem("id", cardId);
-
   };
 
   const filterByArtist = (artista) => {
@@ -93,14 +88,6 @@ export default function ListContainer() {
       .querySelector("audio");
     audioElement.pause();
     setCurrentTrackID("");
-
-  };
-
-  const filterByArtist = (artista) => {
-    const filteredArtists = fonogramas.filter((fonograma) => {
-      return fonograma.artista === artista;
-    });
-    setFonogramas(filteredArtists);
   };
 
   if (!isLoading) {
@@ -109,11 +96,7 @@ export default function ListContainer() {
   return (
     <>
       {!isLoading && (
-
         <FilterBtns artistas={artistas} filterByArtist={filterByArtist} />
-
-       
-
       )}
       <div className="list-container">
         {fonogramas.map((fonograma) => {
