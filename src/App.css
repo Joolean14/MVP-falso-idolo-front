@@ -508,6 +508,7 @@ ul {
   transition: var(--transition);
 }
 
+
 .progress-container {
   background-color: var(--grey-600);
   cursor: pointer;
@@ -525,6 +526,7 @@ ul {
   width: 0;
   transition: width 0.1s linear;
 }
+
 
 /*
 =============== 

@@ -2,6 +2,7 @@ import React from "react";
 import { AiFillPauseCircle, AiFillPlayCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
+
 export default function Card({
   _id: id,
   nombre,
@@ -37,6 +38,8 @@ export default function Card({
       (clickX / e.currentTarget.clientWidth) * audioElement.duration;
   };
 
+
+
   return (
     <div className="card" id={id}>
       <div className="img-container">
@@ -66,6 +69,7 @@ export default function Card({
           <Link to="/detail" target="_blank" onClick={goDetail}>
             Ver detalles
           </Link>
+
           <audio
             preload="none"
             id={`audio-${id}`}
@@ -76,6 +80,8 @@ export default function Card({
               type="audio/mp3"
             />
           </audio>
+
+
         </div>
       </div>
       <div

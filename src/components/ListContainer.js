@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+
 import { FilterBtns } from "./FilterBtns";
 import Card from "./Card";
 import axios from "axios";
@@ -25,6 +26,8 @@ export default function ListContainer() {
         ...new Set(data.fonos.map((item) => item.artista)),
       ]);
       initialFonogramas.current = data.fonos;
+
+
       setIsLoading(false);
     } catch (error) {
       setIsLoading(false);
@@ -36,15 +39,19 @@ export default function ListContainer() {
     getFonogramas();
   }, []);
 
+
   useEffect(() => {
     previousTrackID.current = currentTrackID;
   }, [currentTrackID]);
+
+
 
   //Event handlers.
   const goDetail = (e) => {
     const { target } = e;
     const cardId = target.parentElement.parentElement.parentElement.id;
     localStorage.setItem("id", cardId);
+
   };
 
   const filterByArtist = (artista) => {
@@ -86,12 +93,27 @@ export default function ListContainer() {
       .querySelector("audio");
     audioElement.pause();
     setCurrentTrackID("");
+
   };
+
+  const filterByArtist = (artista) => {
+    const filteredArtists = fonogramas.filter((fonograma) => {
+      return fonograma.artista === artista;
+    });
+    setFonogramas(filteredArtists);
+  };
+
+  if (!isLoading) {
+  }
 
   return (
     <>
       {!isLoading && (
+
         <FilterBtns artistas={artistas} filterByArtist={filterByArtist} />
+
+       
+
       )}
       <div className="list-container">
         {fonogramas.map((fonograma) => {

@@ -3,6 +3,7 @@ export const FilterBtns = ({ artistas, filterByArtist }) => {
     <div className="filter-container">
       <h3 className="artists-title">Artistas</h3>
       {artistas.map((artista, index) => {
+
         return (
           <button
             key={index}
