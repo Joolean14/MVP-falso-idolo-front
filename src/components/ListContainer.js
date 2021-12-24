@@ -10,6 +10,9 @@ export default function ListContainer() {
   const [artistas, setArtistas] = useState([]);
   const initialFonogramas = useRef([]);
 
+  const [currentTrackID, setCurrentTrackID] = useState("");
+  const previousTrackID = useRef("");
+
   const getFonogramas = async () => {
     try {
       const { data } = await axios.get(
@@ -33,6 +36,10 @@ export default function ListContainer() {
     getFonogramas();
   }, []);
 
+  useEffect(() => {
+    previousTrackID.current = currentTrackID;
+  }, [currentTrackID]);
+
   //Event handlers.
   const goDetail = (e) => {
     const { target } = e;
@@ -52,8 +59,34 @@ export default function ListContainer() {
     setFonogramas(filteredArtists);
   };
 
-  if (!isLoading) {
-  }
+  const handlePlay = (e) => {
+    const audioElement = e.currentTarget
+      .closest(".card")
+      .querySelector("audio");
+
+    if (
+      audioElement.id !== previousTrackID.current &&
+      previousTrackID.current !== ""
+    ) {
+      const currentAudio = document.getElementById(previousTrackID.current);
+      if (currentAudio) currentAudio.pause();
+    }
+
+    if (audioElement.readyState !== 4) {
+      audioElement.load();
+    }
+
+    setCurrentTrackID(audioElement.id);
+    audioElement.play();
+  };
+
+  const handlePause = (e) => {
+    const audioElement = e.currentTarget
+      .closest(".card")
+      .querySelector("audio");
+    audioElement.pause();
+    setCurrentTrackID("");
+  };
 
   return (
     <>
@@ -63,7 +96,16 @@ export default function ListContainer() {
       <div className="list-container">
         {fonogramas.map((fonograma) => {
           const { _id: id } = fonograma;
-          return <Card key={id} {...fonograma} goDetail={goDetail} />;
+          return (
+            <Card
+              key={id}
+              {...fonograma}
+              currentTrackID={currentTrackID}
+              goDetail={goDetail}
+              handlePlay={handlePlay}
+              handlePause={handlePause}
+            />
+          );
         })}
       </div>
       {isLoading && <div className="loading"></div>};

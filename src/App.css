@@ -508,6 +508,24 @@ ul {
   transition: var(--transition);
 }
 
+.progress-container {
+  background-color: var(--grey-600);
+  cursor: pointer;
+  border-bottom-left-radius: var(--borderRadius);
+  border-bottom-right-radius: var(--borderRadius);
+  height: 4px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.progress-line {
+  background-color: #fe8daa;
+  border-bottom-left-radius: var(--borderRadius);
+  height: 100%;
+  width: 0;
+  transition: width 0.1s linear;
+}
+
 /*
 =============== 
 *AUDIO PLAYER BUTTON

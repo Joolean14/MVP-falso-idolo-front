@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-
 export const FilterBtns = ({ artistas, filterByArtist }) => {
   return (
     <div className="filter-container">
