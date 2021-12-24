@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/mvp-falso-idolo-front/static/css/main.1cfae680.chunk.css",
-    "main.js": "/mvp-falso-idolo-front/static/js/main.ebeb163d.chunk.js",
-    "main.js.map": "/mvp-falso-idolo-front/static/js/main.ebeb163d.chunk.js.map",
-    "runtime-main.js": "/mvp-falso-idolo-front/static/js/runtime-main.50522710.js",
-    "runtime-main.js.map": "/mvp-falso-idolo-front/static/js/runtime-main.50522710.js.map",
-    "static/js/2.56d4b466.chunk.js": "/mvp-falso-idolo-front/static/js/2.56d4b466.chunk.js",
-    "static/js/2.56d4b466.chunk.js.map": "/mvp-falso-idolo-front/static/js/2.56d4b466.chunk.js.map",
-    "static/js/3.07af4f37.chunk.js": "/mvp-falso-idolo-front/static/js/3.07af4f37.chunk.js",
-    "static/js/3.07af4f37.chunk.js.map": "/mvp-falso-idolo-front/static/js/3.07af4f37.chunk.js.map",
+    "main.css": "/mvp-falso-idolo-front/static/css/main.cde59267.chunk.css",
+    "main.js": "/mvp-falso-idolo-front/static/js/main.5b331aab.chunk.js",
+    "main.js.map": "/mvp-falso-idolo-front/static/js/main.5b331aab.chunk.js.map",
+    "runtime-main.js": "/mvp-falso-idolo-front/static/js/runtime-main.b25fcf3c.js",
+    "runtime-main.js.map": "/mvp-falso-idolo-front/static/js/runtime-main.b25fcf3c.js.map",
+    "static/js/2.188a4f54.chunk.js": "/mvp-falso-idolo-front/static/js/2.188a4f54.chunk.js",
+    "static/js/2.188a4f54.chunk.js.map": "/mvp-falso-idolo-front/static/js/2.188a4f54.chunk.js.map",
+    "static/js/3.31773e7f.chunk.js": "/mvp-falso-idolo-front/static/js/3.31773e7f.chunk.js",
+    "static/js/3.31773e7f.chunk.js.map": "/mvp-falso-idolo-front/static/js/3.31773e7f.chunk.js.map",
     "index.html": "/mvp-falso-idolo-front/index.html",
-    "static/css/main.1cfae680.chunk.css.map": "/mvp-falso-idolo-front/static/css/main.1cfae680.chunk.css.map",
-    "static/js/2.56d4b466.chunk.js.LICENSE.txt": "/mvp-falso-idolo-front/static/js/2.56d4b466.chunk.js.LICENSE.txt",
+    "static/css/main.cde59267.chunk.css.map": "/mvp-falso-idolo-front/static/css/main.cde59267.chunk.css.map",
+    "static/js/2.188a4f54.chunk.js.LICENSE.txt": "/mvp-falso-idolo-front/static/js/2.188a4f54.chunk.js.LICENSE.txt",
     "static/media/simon-prof.6df4a5d7.jpeg": "/mvp-falso-idolo-front/static/media/simon-prof.6df4a5d7.jpeg"
   },
   "entrypoints": [
-    "static/js/runtime-main.50522710.js",
-    "static/js/2.56d4b466.chunk.js",
-    "static/css/main.1cfae680.chunk.css",
-    "static/js/main.ebeb163d.chunk.js"
+    "static/js/runtime-main.b25fcf3c.js",
+    "static/js/2.188a4f54.chunk.js",
+    "static/css/main.cde59267.chunk.css",
+    "static/js/main.5b331aab.chunk.js"
   ]
 }
