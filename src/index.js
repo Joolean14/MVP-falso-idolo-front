@@ -9,7 +9,7 @@ import NotFound from "./components/NotFound";
 
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter basename="/React">
+    <HashRouter>
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="detail" element={<DetalleCancion />} />
